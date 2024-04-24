@@ -24,10 +24,7 @@ def write_file(strings):
             f.write(str)
             f.write('\n')
     
-        print('> Внимание: файл "' + db_file_name + '" был перезаписан!')
-
-    from ui import interface
-    interface()   
+        print('> Внимание: файл "' + db_file_name + '" был перезаписан!') 
 
 # Манипуляции с заметками (на основе найденных в файле)
 def edit_data(data_list, cmd, data_find): 
@@ -137,7 +134,7 @@ def edit_data(data_list, cmd, data_find):
                                         ii = i
 
                         elif cmd == 2: # Поиск по дате
-                            if data_find in data_list[i][1]:
+                            if data_find.lower() in data_list[i][1].lower():
                                 cnt += 1
                                 if cnt == edtNum:
                                     if edtNum2 == 2:
@@ -146,7 +143,7 @@ def edit_data(data_list, cmd, data_find):
                                         ii = i
 
                         elif cmd == 3: # Поиск по заголовку
-                            if data_find in data_list[i][2]:
+                            if data_find.lower() in data_list[i][2].lower():
                                 cnt += 1
                                 if cnt == edtNum:
                                     if edtNum2 == 2:
@@ -155,7 +152,7 @@ def edit_data(data_list, cmd, data_find):
                                         ii = i
 
                         elif cmd == 4: # Поиск по содержанию
-                            if data_find in data_list[i][3]:
+                            if data_find.lower() in data_list[i][3].lower():
                                 cnt += 1
                                 if cnt == edtNum:
                                     if edtNum2 == 2:
